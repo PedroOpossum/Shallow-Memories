@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dx2rljanecvyt"
+path="res://.godot/imported/03 Dance with Silence.mp3-6a275ffc60fa8aa9adc0de898e350d34.mp3str"
+
+[deps]
+
+source_file="res://Assets/Camellia_TeraIO_mp3/TeraIO_mp3/03 Dance with Silence.mp3"
+dest_files=["res://.godot/imported/03 Dance with Silence.mp3-6a275ffc60fa8aa9adc0de898e350d34.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

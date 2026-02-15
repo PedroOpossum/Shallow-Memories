@@ -1,0 +1,93 @@
+[gd_scene load_steps=5 format=3 uid="uid://djwh0pl0q2ge1"]
+
+[ext_resource type="Texture2D" uid="uid://b4i2lnrce2qiq" path="res://Assets/Video_Game_Art/Golden twirly cursor.png" id="1_0ccxn"]
+[ext_resource type="FontFile" uid="uid://cpc61i1o4mhii" path="res://Assets/Adventurer.ttf" id="1_1q73p"]
+[ext_resource type="Script" path="res://Main_Menu.gd" id="1_506wb"]
+
+[sub_resource type="GDScript" id="GDScript_686jj"]
+script/source = "extends Sprite2D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass
+
+	# Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+"
+
+[node name="Main_Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_506wb")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="ColorRect"]
+position = Vector2(390, 358)
+scale = Vector2(2.67188, 2.91406)
+texture = ExtResource("1_0ccxn")
+script = SubResource("GDScript_686jj")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -125.5
+offset_top = -328.0
+offset_right = 125.5
+offset_bottom = -37.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 35
+alignment = 1
+
+[node name="Start" type="Label" parent="ColorRect/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_1q73p")
+theme_override_font_sizes/font_size = 38
+text = "Start"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Freeplay" type="Label" parent="ColorRect/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_1q73p")
+theme_override_font_sizes/font_size = 38
+text = "Freeplay"
+horizontal_alignment = 1
+vertical_alignment = 1
+clip_text = true
+
+[node name="Settings" type="Label" parent="ColorRect/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_1q73p")
+theme_override_font_sizes/font_size = 38
+text = "Settings"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Exit" type="Label" parent="ColorRect/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_1q73p")
+theme_override_font_sizes/font_size = 38
+text = "Exit"
+horizontal_alignment = 1

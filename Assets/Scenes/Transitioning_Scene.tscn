@@ -1,0 +1,153 @@
+[gd_scene load_steps=5 format=3 uid="uid://drr52tcfffv28"]
+
+[ext_resource type="Script" path="res://Assets/Scenes/Code_Stuff/Transitioning_Scene.gd" id="1_2kw3x"]
+[ext_resource type="FontFile" uid="uid://c8cm2ggb5pdys" path="res://Assets/joystix monospace.otf" id="1_o4862"]
+
+[sub_resource type="Animation" id="Animation_cmjem"]
+resource_name = "Transition"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Current_Scene/ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Current_Scene/ColorRect/Warning:theme_override_colors/font_color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.968627, 0, 0, 1), Color(0.968627, 0, 0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Current_Scene/ColorRect/Continue to fade:theme_override_colors/font_color")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.92549, 0.960784, 0, 1), Color(0.92549, 0.960784, 0, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Current_Scene/ColorRect/Continue to fade:theme_override_colors/font_shadow_color")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.823529, 0.831373, 0.811765, 1), Color(0.823529, 0.831373, 0.811765, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Current_Scene/ColorRect/RichTextLabel:theme_override_colors/default_color")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(-0.1, 0.9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_gbvvn"]
+_data = {
+"Transition": SubResource("Animation_cmjem")
+}
+
+[node name="Warning_Scene" type="Node"]
+script = ExtResource("1_2kw3x")
+
+[node name="Current_Scene" type="Node" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="Current_Scene"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Current_Scene/ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 136.0
+offset_bottom = -96.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/default_color = Color(0.9, 0.9, 0.9, 0.9)
+theme_override_constants/line_separation = 10
+theme_override_fonts/normal_font = ExtResource("1_o4862")
+theme_override_font_sizes/normal_font_size = 30
+bbcode_enabled = true
+text = "These are based off real life scenarios, such as:
+
+- anxiety 
+- Suicidal Ideations
+(Will be updated once full game releases)
+
+If you are uncomfortable with these themes please do not play this game, otherwise enjoy
+"
+fit_content = true
+
+[node name="Warning" type="Label" parent="Current_Scene/ColorRect"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -33.0
+offset_right = 33.0
+offset_bottom = 23.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.968627, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_o4862")
+theme_override_font_sizes/font_size = 54
+text = "Warning"
+horizontal_alignment = 1
+
+[node name="Continue to fade" type="Label" parent="Current_Scene/ColorRect"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -24.0
+offset_right = 20.0
+offset_bottom = -1.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.92549, 0.960784, 0, 1)
+theme_override_colors/font_shadow_color = Color(0.823529, 0.831373, 0.811765, 1)
+theme_override_fonts/font = ExtResource("1_o4862")
+theme_override_font_sizes/font_size = 36
+text = "Press enter to continue"
+
+[node name="Transitioning_Phase" type="AnimationPlayer" parent="Current_Scene"]
+active = false
+reset_on_save = false
+root_node = NodePath("../..")
+libraries = {
+"": SubResource("AnimationLibrary_gbvvn")
+}
+autoplay = "Transition"
+movie_quit_on_finish = true

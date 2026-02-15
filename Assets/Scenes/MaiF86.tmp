@@ -1,0 +1,87 @@
+[gd_scene load_steps=5 format=3 uid="uid://djwh0pl0q2ge1"]
+
+[ext_resource type="Texture2D" uid="uid://b4i2lnrce2qiq" path="res://Assets/Video_Game_Art/Golden twirly cursor.png" id="1_0ccxn"]
+[ext_resource type="FontFile" uid="uid://cpc61i1o4mhii" path="res://Assets/Adventurer.ttf" id="1_1q73p"]
+[ext_resource type="Script" path="res://Assets/Code_Stuff/Arrow_Cursor.tres.gd" id="3_nv4kw"]
+[ext_resource type="Script" path="res://Assets/Code_Stuff/Menu_Selector.gd" id="4_2omsn"]
+
+[node name="Main_Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Arrow" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 296.0
+offset_top = 192.0
+offset_right = 424.0
+offset_bottom = 320.0
+scale = Vector2(2.67188, 2.91406)
+texture = ExtResource("1_0ccxn")
+script = ExtResource("3_nv4kw")
+menu_parent_path = NodePath("../VBoxContainer")
+cursor_offset = Vector2(240, 178)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 483.0
+offset_top = 346.0
+offset_right = 734.0
+offset_bottom = 637.0
+theme_override_constants/separation = 35
+alignment = 1
+
+[node name="Start" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_1q73p")
+theme_override_font_sizes/font_size = 38
+text = "Start"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("4_2omsn")
+
+[node name="Freeplay" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_1q73p")
+theme_override_font_sizes/font_size = 38
+text = "Freeplay"
+horizontal_alignment = 1
+vertical_alignment = 1
+clip_text = true
+script = ExtResource("4_2omsn")
+
+[node name="Settings" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_1q73p")
+theme_override_font_sizes/font_size = 38
+text = "Settings"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("4_2omsn")
+
+[node name="Exit" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_1q73p")
+theme_override_font_sizes/font_size = 38
+text = "Exit"
+horizontal_alignment = 1
+script = ExtResource("4_2omsn")
+
+[connection signal="cursor_selected" from="VBoxContainer/Start" to="VBoxContainer/Start" method="_on_cursor_selected"]
+[connection signal="cursor_selected" from="VBoxContainer/Freeplay" to="VBoxContainer/Freeplay" method="_on_cursor_selected"]
+[connection signal="cursor_selected" from="VBoxContainer/Settings" to="VBoxContainer/Settings" method="_on_cursor_selected"]
+[connection signal="script_changed" from="VBoxContainer/Settings" to="VBoxContainer/Settings" method="_on_script_changed"]
+[connection signal="cursor_selected" from="VBoxContainer/Exit" to="VBoxContainer/Exit" method="_on_cursor_selected"]

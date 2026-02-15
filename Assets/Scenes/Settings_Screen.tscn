@@ -1,0 +1,38 @@
+[gd_scene load_steps=2 format=3 uid="uid://c8bn4ibg4xdvr"]
+
+[ext_resource type="Script" path="res://Assets/Scenes/Code_Stuff/Settings_Screen.gd" id="1_n22rl"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_n22rl")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+clip_contents = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="ItemList" type="ItemList" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/h_separation = 20
+theme_override_constants/v_separation = 40
+theme_override_font_sizes/font_size = 44
+select_mode = 1
+item_count = 3
+item_0/text = "Attack"
+item_1/text = "Dodge"
+item_2/text = "Escape"

@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://cmln04y1epu1r"]
+
+[ext_resource type="AudioStream" uid="uid://c8rqfxb3sqacn" path="res://Assets/Camellia_TeraIO_mp3/TeraIO_mp3/05 Fly Wit Me.mp3" id="1_gtox4"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_gtox4")
+autoplay = true

@@ -1,0 +1,28 @@
+~ this_is_a_node_title
+
+Pedro: ...
+Pedro: Hello?
+Pedro: ...
+Pedro: HELLO!!!!
+???: ...
+Pedro: Who are you?
+???: ...
+???: [wave amp=45 frequency = 10]Some things are better left unsaid [/wave]
+Pedro: Well can you at least answer my other questions?
+- Where am I?
+	???: [wave amp=45 frequency=10]We call this the absymal[/wave]
+	???: No one has never escaped...
+	???:  [wave amp=45 frequency=10]...yet...[/wave] 
+	=> END
+- Are you affilated with those inky monsters?
+	???: [wave amp=45 frequency=10]Only time will tell[/wave]
+	=> END
+- How did you end up here?
+	???: Same way you did
+	Pedro: How did you kno-
+	???: If the glass is shattered from above
+	???: [wave amp=45 frequency=10]...we all know...[/wave]
+
+
+
+=> END

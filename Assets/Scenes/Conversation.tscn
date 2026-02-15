@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://c1gy6y1cbqcec"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(2, 2)
+
+[node name="AudioListener2D" type="AudioListener2D" parent="."]
+position = Vector2(3, -2)

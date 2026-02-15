@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://4ftukgjhsd5"
+path="res://.godot/imported/06 +ERABY+E CONNEC+10N.mp3-eacd0732bd06a6db3a4c1d1deda459de.mp3str"
+
+[deps]
+
+source_file="res://Assets/Camellia_TeraIO_mp3/TeraIO_mp3/06 +ERABY+E CONNEC+10N.mp3"
+dest_files=["res://.godot/imported/06 +ERABY+E CONNEC+10N.mp3-eacd0732bd06a6db3a4c1d1deda459de.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
