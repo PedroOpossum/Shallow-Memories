@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://cdo6d6ycbymg3"]
+[gd_scene load_steps=6 format=3 uid="uid://cdo6d6ycbymg3"]
 
 [ext_resource type="Texture2D" uid="uid://b4i2lnrce2qiq" path="res://Assets/Video_Game_Art/Golden twirly cursor.png" id="1_tm1t7"]
-[ext_resource type="Script" path="res://Assets/Scenes/Code_Stuff/Arrow.gd" id="2_uf1xx"]
+[ext_resource type="Script" path="res://Assets/Scenes/Title.gd" id="2_e8fvn"]
+[ext_resource type="Script" path="res://Assets/Scenes/Script/Arrow.gd" id="2_uf1xx"]
 [ext_resource type="FontFile" uid="uid://cpc61i1o4mhii" path="res://Assets/Adventurer.ttf" id="3_erhp1"]
-[ext_resource type="Script" path="res://Assets/Scenes/Code_Stuff/Menu_Selector.gd" id="4_u0e0b"]
+[ext_resource type="Script" path="res://Assets/Scenes/Script/Menu_Selector.gd" id="4_u0e0b"]
 
 [node name="Main_Menu" type="Control"]
 layout_mode = 3
@@ -21,6 +22,22 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 0
+offset_left = 336.0
+offset_right = 880.0
+offset_bottom = 168.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.820216, 0.833766, 0.181595, 1)
+theme_override_constants/shadow_offset_x = 4
+theme_override_fonts/font = ExtResource("3_erhp1")
+theme_override_font_sizes/font_size = 64
+text = "Shallow Memories
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("2_e8fvn")
 
 [node name="Arrow" type="TextureRect" parent="."]
 layout_mode = 2

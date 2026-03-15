@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://bjrvehnbgrq4i"]
 
-[ext_resource type="Script" path="res://Assets/Scenes/Code_Stuff/Collection_Screen.gd" id="1_lwbcl"]
+[ext_resource type="Script" path="res://Assets/Scenes/Script/Collection_Screen.gd" id="1_lwbcl"]
 
 [node name="Control" type="Control"]
 layout_mode = 3

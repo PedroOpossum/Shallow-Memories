@@ -1,16 +1,17 @@
-[gd_scene load_steps=4 format=3 uid="uid://do2syej4mt8yu"]
+[gd_scene load_steps=3 format=3 uid="uid://do2syej4mt8yu"]
 
-[ext_resource type="Script" path="res://Assets/Scenes/Code_Stuff/Freeplay_Screen.gd" id="1_6rosu"]
+[ext_resource type="Script" path="res://Assets/Scenes/Script/Freeplay_Screen.gd" id="1_6rosu"]
 [ext_resource type="Texture2D" uid="uid://bqtkpb6fjjasi" path="res://Assets/Video_Game_Art/Freeplay.png" id="2_7hg7g"]
-[ext_resource type="Script" path="res://Assets/Scenes/Code_Stuff/Freeplay_selection.gd" id="2_tcph1"]
 
 [node name="Control" type="Control"]
+clip_contents = true
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource("1_6rosu")
 
@@ -29,24 +30,29 @@ layout_mode = 1
 anchors_preset = 9
 anchor_bottom = 1.0
 offset_right = 264.0
-offset_bottom = -324.0
 grow_vertical = 2
 scale = Vector2(2, 2)
 theme_override_constants/separation = 68
-script = ExtResource("2_tcph1")
 
-[node name="TextureRect" type="TextureRect" parent="VBoxContainer"]
+[node name="First" type="TextureRect" parent="VBoxContainer"]
 clip_contents = true
 layout_mode = 2
-size_flags_stretch_ratio = 1.17
+size_flags_horizontal = 0
+size_flags_vertical = 0
 texture = ExtResource("2_7hg7g")
+stretch_mode = 1
 
-[node name="TextureRect2" type="TextureRect" parent="VBoxContainer"]
+[node name="Second" type="TextureRect" parent="VBoxContainer"]
 clip_contents = true
 layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
 texture = ExtResource("2_7hg7g")
 
-[node name="TextureRect3" type="TextureRect" parent="VBoxContainer"]
+[node name="Third" type="TextureRect" parent="VBoxContainer"]
 clip_contents = true
 layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
 texture = ExtResource("2_7hg7g")
+stretch_mode = 4
