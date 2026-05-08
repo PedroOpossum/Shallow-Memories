@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cm3v4johcuj0r"
-path="res://.godot/imported/Tile Map 4.png-174faaced9fc92ac8f41983d2b2e7918.ctex"
+uid="uid://bt28fyu24pc45"
+path="res://.godot/imported/Right_Eyes.png-53ed650db81f368a5f7556730d702ad0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Video_Game_Art/TileMap/Tile Map 4.png"
-dest_files=["res://.godot/imported/Tile Map 4.png-174faaced9fc92ac8f41983d2b2e7918.ctex"]
+source_file="res://Assets/Video_Game_Art/Scary_eyes/Right_Eyes.png"
+dest_files=["res://.godot/imported/Right_Eyes.png-53ed650db81f368a5f7556730d702ad0.ctex"]
 
 [params]
 

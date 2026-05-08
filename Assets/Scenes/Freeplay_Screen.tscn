@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://do2syej4mt8yu"]
 
 [ext_resource type="Script" path="res://Assets/Scenes/Script/Freeplay_Screen.gd" id="1_6rosu"]
-[ext_resource type="Texture2D" uid="uid://bqtkpb6fjjasi" path="res://Assets/Video_Game_Art/Freeplay.png" id="2_7hg7g"]
+[ext_resource type="Texture2D" uid="uid://c4rcmxjlqdwbq" path="res://Assets/Video_Game_Art/Freeplay.png" id="2_7hg7g"]
 
 [node name="Control" type="Control"]
 clip_contents = true
@@ -14,15 +14,6 @@ grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource("1_6rosu")
-
-[node name="ColorRect" type="ColorRect" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0, 0, 0, 1)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 clip_contents = true

@@ -39,23 +39,29 @@ func move_selection(direction: int) -> void:
 
 
 func update_visuals(instant: bool = false) -> void:
-
+	   # Kill previous tween if exists
 	if tween:
 		tween.kill()
-
+	# Create a new tween
 	tween = create_tween()
 	tween.set_parallel(true)
-
+	var has_tweeners := false
 	for i in range(items.size()):
 		var item: TextureRect = items[i]
 		var is_selected := i == current_index
-
 		var target_scale := CENTER_SCALE if is_selected else SIDE_SCALE
 		var target_alpha := CENTER_ALPHA if is_selected else SIDE_ALPHA
-
 		if instant:
 			item.scale = target_scale
 			item.modulate.a = target_alpha
 		else:
-			tween.tween_property(item, "scale", target_scale, TWEEN_DURATION)
-			tween.tween_property(item, "modulate:a", target_alpha, TWEEN_DURATION)
+			# Only tween if current value is different
+			if item.scale != target_scale:
+				tween.tween_property(item, "scale", target_scale, TWEEN_DURATION)
+				has_tweeners = true
+			if item.modulate.a != target_alpha:
+				tween.tween_property(item, "modulate:a", target_alpha, TWEEN_DURATION)
+				has_tweeners = true
+	# If no tweeners were added, kill the tween to avoid the warning 
+	if not has_tweeners:    
+		tween.kill()

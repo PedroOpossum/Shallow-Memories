@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cm3v4johcuj0r"
-path="res://.godot/imported/Tile Map 4.png-174faaced9fc92ac8f41983d2b2e7918.ctex"
+uid="uid://brml0thmhso03"
+path="res://.godot/imported/Dialouge Box.png-daecceb4d96bcdb58a8e51c31743b1d3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Video_Game_Art/TileMap/Tile Map 4.png"
-dest_files=["res://.godot/imported/Tile Map 4.png-174faaced9fc92ac8f41983d2b2e7918.ctex"]
+source_file="res://Assets/Video_Game_Art/Dialouge Box.png"
+dest_files=["res://.godot/imported/Dialouge Box.png-daecceb4d96bcdb58a8e51c31743b1d3.ctex"]
 
 [params]
 

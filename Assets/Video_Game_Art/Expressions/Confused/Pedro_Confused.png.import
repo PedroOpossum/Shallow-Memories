@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bmoml2j44q3ss"
-path="res://.godot/imported/Pedro_Talking-sheet.png-3be732a529e4ad95b09322cd8fb7439c.ctex"
+uid="uid://mudqdc6yjh6"
+path="res://.godot/imported/Pedro_Confused.png-49f30c19f3ba8c927fd1ec90aa0431ab.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Video_Game_Art/Pedro_Talking-sheet.png"
-dest_files=["res://.godot/imported/Pedro_Talking-sheet.png-3be732a529e4ad95b09322cd8fb7439c.ctex"]
+source_file="res://Assets/Video_Game_Art/Expressions/Confused/Pedro_Confused.png"
+dest_files=["res://.godot/imported/Pedro_Confused.png-49f30c19f3ba8c927fd1ec90aa0431ab.ctex"]
 
 [params]
 

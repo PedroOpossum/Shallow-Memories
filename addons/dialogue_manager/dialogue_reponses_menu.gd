@@ -86,55 +86,41 @@ func set_responses(next_responses: Array) -> void:
 
 
 # Prepare the menu for keyboard and mouse navigation.
+
 func _configure_focus() -> void:
 	var items = get_menu_items()
+	if items.is_empty():
+		return
+	
 	for i in items.size():
 		var item: Control = items[i]
-
+		item.modulate = Color(0.6, 0.6, 0.6, 1)
 		item.focus_mode = Control.FOCUS_ALL
-
 		item.focus_neighbor_left = item.get_path()
 		item.focus_neighbor_right = item.get_path()
-
-		if i == 0:
-			item.focus_neighbor_top = item.get_path()
-			item.focus_previous = item.get_path()
-		else:
-			item.focus_neighbor_top = items[i - 1].get_path()
-			item.focus_previous = items[i - 1].get_path()
-
-		if i == items.size() - 1:
-			item.focus_neighbor_bottom = item.get_path()
-			item.focus_next = item.get_path()
-		else:
-			item.focus_neighbor_bottom = items[i + 1].get_path()
-			item.focus_next = items[i + 1].get_path()
-
-		item.mouse_entered.connect(_on_response_mouse_entered.bind(item))
+		item.focus_neighbor_top = items[i - 1].get_path() if i > 0 else item.get_path()
+		item.focus_previous = items[i - 1].get_path() if i > 0 else item.get_path()
+		item.focus_neighbor_bottom = items[i + 1].get_path() if i < items.size() - 1 else item.get_path()
+		item.focus_next = items[i + 1].get_path() if i < items.size() - 1 else item.get_path()
 		item.gui_input.connect(_on_response_gui_input.bind(item, item.get_meta("response")))
-
+		item.focus_entered.connect(func(): item.create_tween().tween_property(item, "modulate", Color(1, 1, 1, 1), 0.1))
+		item.focus_exited.connect(func(): item.create_tween().tween_property(item, "modulate", Color(0.6, 0.6, 0.6, 1), 0.1))
+	
+	items[0].modulate = Color(1, 1, 1, 1)
 	items[0].grab_focus()
-
 
 #endregion
 
 #region Signals
 
 
-func _on_response_mouse_entered(item: Control) -> void:
-	if "Disallowed" in item.name: return
-
-	item.grab_focus()
 
 
 func _on_response_gui_input(event: InputEvent, item: Control, response) -> void:
 	if "Disallowed" in item.name: return
 
 	get_viewport().set_input_as_handled()
-
-	if event is InputEventMouseButton and event.is_pressed() and event.button_index == MOUSE_BUTTON_LEFT:
-		response_selected.emit(response)
-	elif event.is_action_pressed(&"ui_accept" if next_action.is_empty() else next_action) and item in get_menu_items():
+	if event.is_action_pressed(&"ui_accept" if next_action.is_empty() else next_action) and item in get_menu_items():
 		response_selected.emit(response)
 
 

@@ -31,10 +31,9 @@ func set_cursor_from_index(index: int) -> void:
 	#This positions the arrow at the given index
 	
 func _ready():
-	Vector2.ZERO  
 	pass  
 	
-func _process(delta):
+func _process(_delta):
 	var input := Vector2.ZERO
 	if Input.is_action_just_pressed("ui_up") or Input.is_action_just_pressed("W"):
 		input.y -=1

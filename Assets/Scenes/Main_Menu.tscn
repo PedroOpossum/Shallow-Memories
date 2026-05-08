@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://cdo6d6ycbymg3"]
 
-[ext_resource type="Texture2D" uid="uid://b4i2lnrce2qiq" path="res://Assets/Video_Game_Art/Golden twirly cursor.png" id="1_tm1t7"]
-[ext_resource type="Script" path="res://Assets/Scenes/Title.gd" id="2_e8fvn"]
+[ext_resource type="Texture2D" uid="uid://dgxgvv2n4lnqa" path="res://Assets/Video_Game_Art/Golden twirly cursor.png" id="1_tm1t7"]
+[ext_resource type="Script" path="res://Assets/Scenes/Script/Title.gd" id="2_e8fvn"]
 [ext_resource type="Script" path="res://Assets/Scenes/Script/Arrow.gd" id="2_uf1xx"]
 [ext_resource type="FontFile" uid="uid://cpc61i1o4mhii" path="res://Assets/Adventurer.ttf" id="3_erhp1"]
 [ext_resource type="Script" path="res://Assets/Scenes/Script/Menu_Selector.gd" id="4_u0e0b"]

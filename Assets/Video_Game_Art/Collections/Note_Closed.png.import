@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cm3v4johcuj0r"
-path="res://.godot/imported/Tile Map 4.png-174faaced9fc92ac8f41983d2b2e7918.ctex"
+uid="uid://bsxro6mjs036j"
+path="res://.godot/imported/Note_Closed.png-82a300ad87e2173665b6c296ab830cb1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Video_Game_Art/TileMap/Tile Map 4.png"
-dest_files=["res://.godot/imported/Tile Map 4.png-174faaced9fc92ac8f41983d2b2e7918.ctex"]
+source_file="res://Assets/Video_Game_Art/Collections/Note_Closed.png"
+dest_files=["res://.godot/imported/Note_Closed.png-82a300ad87e2173665b6c296ab830cb1.ctex"]
 
 [params]
 

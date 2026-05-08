@@ -10,7 +10,6 @@ func cursor_select()-> void:
 	match Name:
 		"Start":
 			get_tree().change_scene_to_packed(Start) 
-			
 		"Freeplay":
 			get_tree().change_scene_to_packed(Freeplay) 
 		"Collection":

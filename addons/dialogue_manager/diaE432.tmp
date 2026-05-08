@@ -6,7 +6,7 @@ script/source = "@icon(\"./assets/icon.svg\")
 @tool
 
 ## A RichTextLabel specifically for use with [b]Dialogue Manager[/b] dialogue.
-class_name Dialgue extends RichTextLabel
+class_name MyDialogueLabel extends RichTextLabel
 
 
 ## Emitted for each letter typed out.
