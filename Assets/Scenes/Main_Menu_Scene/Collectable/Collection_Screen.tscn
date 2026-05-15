@@ -1,0 +1,255 @@
+[gd_scene load_steps=6 format=3 uid="uid://bjrvehnbgrq4i"]
+
+[ext_resource type="Script" path="res://Assets/Scenes/Main_Menu_Scene/Collectable/Collection_Screen.gd" id="1_53kch"]
+[ext_resource type="Texture2D" uid="uid://bsxro6mjs036j" path="res://Assets/Video_Game_Art/Collections/Note_Closed.png" id="2_fdua7"]
+[ext_resource type="FontFile" uid="uid://cpc61i1o4mhii" path="res://Assets/Fonts/Adventurer.ttf" id="2_xe215"]
+[ext_resource type="Texture2D" uid="uid://b32om8exeo7ms" path="res://Assets/Video_Game_Art/Collections/Memory-Orb_Closed.png" id="4_40asu"]
+[ext_resource type="PackedScene" uid="uid://cmvr0bmc0gkve" path="res://Assets/Scenes/Main_Menu_Scene/Collectable/PoemView.tscn" id="5_28e7w"]
+
+[node name="Collection" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_53kch")
+
+[node name="Main_UI" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Notes" type="GridContainer" parent="Main_UI"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 30.0
+offset_top = 45.0
+offset_right = 1082.0
+offset_bottom = 281.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/h_separation = 36
+theme_override_constants/v_separation = 36
+columns = 8
+
+[node name="Poem 1" type="TextureButton" parent="Main_UI/Notes"]
+layout_mode = 2
+button_mask = 0
+texture_normal = ExtResource("2_fdua7")
+
+[node name="Poem 2" type="TextureButton" parent="Main_UI/Notes"]
+layout_mode = 2
+button_mask = 0
+texture_normal = ExtResource("2_fdua7")
+
+[node name="Poem 3" type="TextureButton" parent="Main_UI/Notes"]
+layout_mode = 2
+button_mask = 0
+texture_normal = ExtResource("2_fdua7")
+
+[node name="Poem 4" type="TextureButton" parent="Main_UI/Notes"]
+layout_mode = 2
+button_mask = 0
+texture_normal = ExtResource("2_fdua7")
+
+[node name="Poem 5" type="TextureButton" parent="Main_UI/Notes"]
+layout_mode = 2
+button_mask = 0
+texture_normal = ExtResource("2_fdua7")
+
+[node name="Poem 6" type="TextureButton" parent="Main_UI/Notes"]
+layout_mode = 2
+button_mask = 0
+texture_normal = ExtResource("2_fdua7")
+
+[node name="Poem 7" type="TextureButton" parent="Main_UI/Notes"]
+layout_mode = 2
+button_mask = 0
+texture_normal = ExtResource("2_fdua7")
+
+[node name="Poem 8" type="TextureButton" parent="Main_UI/Notes"]
+layout_mode = 2
+button_mask = 0
+texture_normal = ExtResource("2_fdua7")
+
+[node name="Poem 9" type="TextureButton" parent="Main_UI/Notes"]
+layout_mode = 2
+button_mask = 0
+texture_normal = ExtResource("2_fdua7")
+
+[node name="Poem 10" type="TextureButton" parent="Main_UI/Notes"]
+layout_mode = 2
+button_mask = 0
+texture_normal = ExtResource("2_fdua7")
+
+[node name="Poem 11" type="TextureButton" parent="Main_UI/Notes"]
+layout_mode = 2
+button_mask = 0
+texture_normal = ExtResource("2_fdua7")
+
+[node name="Poem 12" type="TextureButton" parent="Main_UI/Notes"]
+layout_mode = 2
+button_mask = 0
+texture_normal = ExtResource("2_fdua7")
+
+[node name="Poem 13" type="TextureButton" parent="Main_UI/Notes"]
+layout_mode = 2
+button_mask = 0
+texture_normal = ExtResource("2_fdua7")
+
+[node name="Poem 14" type="TextureButton" parent="Main_UI/Notes"]
+layout_mode = 2
+button_mask = 0
+texture_normal = ExtResource("2_fdua7")
+
+[node name="Poem 15" type="TextureButton" parent="Main_UI/Notes"]
+layout_mode = 2
+button_mask = 0
+texture_normal = ExtResource("2_fdua7")
+
+[node name="Poem 16" type="TextureButton" parent="Main_UI/Notes"]
+layout_mode = 2
+button_mask = 0
+texture_normal = ExtResource("2_fdua7")
+
+[node name="Notes_text" type="Label" parent="Main_UI"]
+layout_mode = 1
+offset_right = 99.0
+offset_bottom = 49.0
+theme_override_fonts/font = ExtResource("2_xe215")
+theme_override_font_sizes/font_size = 35
+text = "Notes"
+
+[node name="Memories Text" type="Label" parent="Main_UI"]
+layout_mode = 0
+offset_top = 404.0
+offset_right = 168.0
+offset_bottom = 453.0
+theme_override_fonts/font = ExtResource("2_xe215")
+theme_override_font_sizes/font_size = 35
+text = "Memories"
+
+[node name="Memories" type="GridContainer" parent="Main_UI"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -12.0
+offset_top = 444.0
+offset_right = 1123.0
+offset_bottom = 619.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/h_separation = 55
+theme_override_constants/v_separation = 47
+columns = 10
+
+[node name="Memory Orb 1" type="TextureButton" parent="Main_UI/Memories"]
+layout_mode = 2
+button_mask = 0
+texture_normal = ExtResource("4_40asu")
+
+[node name="Memory Orb 2" type="TextureButton" parent="Main_UI/Memories"]
+layout_mode = 2
+button_mask = 0
+texture_normal = ExtResource("4_40asu")
+
+[node name="Memory Orb 3" type="TextureButton" parent="Main_UI/Memories"]
+layout_mode = 2
+button_mask = 0
+texture_normal = ExtResource("4_40asu")
+
+[node name="Memory Orb 4" type="TextureButton" parent="Main_UI/Memories"]
+layout_mode = 2
+button_mask = 0
+texture_normal = ExtResource("4_40asu")
+
+[node name="Memory Orb 5" type="TextureButton" parent="Main_UI/Memories"]
+layout_mode = 2
+button_mask = 0
+texture_normal = ExtResource("4_40asu")
+
+[node name="Memory Orb 6" type="TextureButton" parent="Main_UI/Memories"]
+layout_mode = 2
+button_mask = 0
+texture_normal = ExtResource("4_40asu")
+
+[node name="Memory Orb 7" type="TextureButton" parent="Main_UI/Memories"]
+layout_mode = 2
+button_mask = 0
+texture_normal = ExtResource("4_40asu")
+
+[node name="Memory Orb 8" type="TextureButton" parent="Main_UI/Memories"]
+layout_mode = 2
+button_mask = 0
+texture_normal = ExtResource("4_40asu")
+
+[node name="Memory Orb 9" type="TextureButton" parent="Main_UI/Memories"]
+layout_mode = 2
+button_mask = 0
+texture_normal = ExtResource("4_40asu")
+
+[node name="Memory Orb 10" type="TextureButton" parent="Main_UI/Memories"]
+layout_mode = 2
+button_mask = 0
+texture_normal = ExtResource("4_40asu")
+
+[node name="Memory Orb 11" type="TextureButton" parent="Main_UI/Memories"]
+layout_mode = 2
+button_mask = 0
+texture_normal = ExtResource("4_40asu")
+
+[node name="Memory Orb 12" type="TextureButton" parent="Main_UI/Memories"]
+layout_mode = 2
+button_mask = 0
+texture_normal = ExtResource("4_40asu")
+
+[node name="Memory Orb 13" type="TextureButton" parent="Main_UI/Memories"]
+layout_mode = 2
+button_mask = 0
+texture_normal = ExtResource("4_40asu")
+
+[node name="Memory Orb 14" type="TextureButton" parent="Main_UI/Memories"]
+layout_mode = 2
+button_mask = 0
+texture_normal = ExtResource("4_40asu")
+
+[node name="Memory Orb 15" type="TextureButton" parent="Main_UI/Memories"]
+layout_mode = 2
+button_mask = 0
+texture_normal = ExtResource("4_40asu")
+
+[node name="Memory Orb 16" type="TextureButton" parent="Main_UI/Memories"]
+layout_mode = 2
+button_mask = 0
+texture_normal = ExtResource("4_40asu")
+
+[node name="Memory Orb 17" type="TextureButton" parent="Main_UI/Memories"]
+layout_mode = 2
+button_mask = 0
+texture_normal = ExtResource("4_40asu")
+
+[node name="Memory Orb 18" type="TextureButton" parent="Main_UI/Memories"]
+layout_mode = 2
+button_mask = 0
+texture_normal = ExtResource("4_40asu")
+
+[node name="Memory Orb 19" type="TextureButton" parent="Main_UI/Memories"]
+layout_mode = 2
+button_mask = 0
+texture_normal = ExtResource("4_40asu")
+
+[node name="Memory Orb 20" type="TextureButton" parent="Main_UI/Memories"]
+layout_mode = 2
+button_mask = 0
+texture_normal = ExtResource("4_40asu")
+
+[node name="PoemView" parent="." instance=ExtResource("5_28e7w")]
+layout_mode = 1

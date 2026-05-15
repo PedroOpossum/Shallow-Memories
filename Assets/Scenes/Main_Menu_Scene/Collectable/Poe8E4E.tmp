@@ -1,0 +1,56 @@
+[gd_scene load_steps=4 format=3 uid="uid://cmvr0bmc0gkve"]
+
+[ext_resource type="Shader" path="res://Assets/Scenes/Collectables_Scenes/PoemView.gdshader" id="1_u1rlx"]
+[ext_resource type="Script" path="res://Assets/Scenes/Collectables_Scenes/PoemView.gd" id="1_ysfg3"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xgjpf"]
+shader = ExtResource("1_u1rlx")
+shader_parameter/top_color = Color(0.94, 0.89, 0.84, 1)
+shader_parameter/bottom_color = Color(0.78, 0.67, 0.56, 1)
+shader_parameter/edge_darkness = 0.45
+
+[node name="PoemView" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ysfg3")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 23.0
+grow_horizontal = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_xgjpf")
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -240.0
+offset_right = 232.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.882353, 0.815686, 0.745098, 1)

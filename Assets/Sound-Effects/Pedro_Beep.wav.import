@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://cf2d6q2rvyqdf"
-path="res://.godot/imported/Pedro_Beep.wav-aec0a500df5e5f1afac880106423be06.sample"
+path="res://.godot/imported/Pedro_Beep.wav-6d0db17e855154187bedfc42c20b3ef1.sample"
 
 [deps]
 
-source_file="res://Assets/Pedro_Beep.wav"
-dest_files=["res://.godot/imported/Pedro_Beep.wav-aec0a500df5e5f1afac880106423be06.sample"]
+source_file="res://Assets/Sound-Effects/Pedro_Beep.wav"
+dest_files=["res://.godot/imported/Pedro_Beep.wav-6d0db17e855154187bedfc42c20b3ef1.sample"]
 
 [params]
 

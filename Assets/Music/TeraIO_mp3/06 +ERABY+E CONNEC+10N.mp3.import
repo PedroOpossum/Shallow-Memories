@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://4ftukgjhsd5"
+path="res://.godot/imported/06 +ERABY+E CONNEC+10N.mp3-0eddaf7a291a134c4bfab6c5c5b70931.mp3str"
+
+[deps]
+
+source_file="res://Assets/Music/TeraIO_mp3/06 +ERABY+E CONNEC+10N.mp3"
+dest_files=["res://.godot/imported/06 +ERABY+E CONNEC+10N.mp3-0eddaf7a291a134c4bfab6c5c5b70931.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

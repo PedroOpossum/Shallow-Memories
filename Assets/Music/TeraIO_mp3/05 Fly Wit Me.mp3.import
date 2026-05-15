@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c8rqfxb3sqacn"
+path="res://.godot/imported/05 Fly Wit Me.mp3-812d470bea6c7425a37e1bcc93915408.mp3str"
+
+[deps]
+
+source_file="res://Assets/Music/TeraIO_mp3/05 Fly Wit Me.mp3"
+dest_files=["res://.godot/imported/05 Fly Wit Me.mp3-812d470bea6c7425a37e1bcc93915408.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

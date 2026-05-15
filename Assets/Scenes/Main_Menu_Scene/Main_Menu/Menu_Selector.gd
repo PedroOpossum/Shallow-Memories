@@ -2,9 +2,9 @@ extends Label
 
 signal cursor_selected
 @onready var Start = preload("res://Assets/Scenes/Heaven.tscn")
-@onready var Freeplay = preload("res://Assets/Scenes/Freeplay_Screen.tscn")
-@onready var Collection = preload("res://Assets/Scenes/Collection_Screen.tscn")
-@onready var Settings = preload("res://Assets/Scenes/Settings_Screen.tscn")
+@onready var Freeplay = preload("res://Assets/Scenes/Main_Menu_Scene/Freeplay/Freeplay_Screen.tscn")
+@onready var Collection = preload("res://Assets/Scenes/Main_Menu_Scene/Collectable/Collection_Screen.tscn")
+@onready var Settings = preload("res://Assets/Scenes/Main_Menu_Scene/Settings/Settings_Screen.tscn")
 func cursor_select()-> void:
 	var Name := self.text
 	match Name:

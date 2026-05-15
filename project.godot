@@ -11,17 +11,18 @@ config_version=5
 [application]
 
 config/name="Shallow_Memories DEMO"
-run/main_scene="res://Assets/Scenes/Transitioning_Scene.tscn"
+run/main_scene="res://Assets/Scenes/Main_Menu_Scene/Main_Menu/Transitioning_Scene.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
 
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
+Poems="*res://Assets/Scenes/Main_Menu_Scene/Collectable/Poems.gd"
 
 [dialogue_manager]
 
-general/balloon_path="res://Assets/Scenes/Talking.tscn"
+general/balloon_path="res://Assets/Scenes/Talking_Scene/Talking.tscn"
 
 [display]
 

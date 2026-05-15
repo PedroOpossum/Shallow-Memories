@@ -1,0 +1,107 @@
+[gd_scene load_steps=6 format=3 uid="uid://cdo6d6ycbymg3"]
+
+[ext_resource type="FontFile" uid="uid://cpc61i1o4mhii" path="res://Assets/Fonts/Adventurer.ttf" id="1_ia2cg"]
+[ext_resource type="Script" path="res://Assets/Scenes/Main_Menu_Scene/Main_Menu/Title.gd" id="2_n87ks"]
+[ext_resource type="Texture2D" uid="uid://dgxgvv2n4lnqa" path="res://Assets/Video_Game_Art/Golden twirly cursor.png" id="3_54fih"]
+[ext_resource type="Script" path="res://Assets/Scenes/Main_Menu_Scene/Main_Menu/Arrow.gd" id="4_syb6t"]
+[ext_resource type="Script" path="res://Assets/Scenes/Main_Menu_Scene/Main_Menu/Menu_Selector.gd" id="5_bfmof"]
+
+[node name="Main_Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 38.0
+offset_bottom = 102.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.820216, 0.833766, 0.181595, 1)
+theme_override_constants/shadow_offset_x = 4
+theme_override_fonts/font = ExtResource("1_ia2cg")
+theme_override_font_sizes/font_size = 64
+text = "Shallow Memories
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("2_n87ks")
+
+[node name="Arrow" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -365.0
+offset_top = -510.0
+offset_right = -237.0
+offset_bottom = -382.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(2.672, 2.672)
+texture = ExtResource("3_54fih")
+script = ExtResource("4_syb6t")
+menu_parent_path = NodePath("../VBoxContainer")
+cursor_offset = Vector2(240, 150)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -76.0
+offset_top = -352.0
+offset_right = 76.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 35
+
+[node name="Start" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("1_ia2cg")
+theme_override_font_sizes/font_size = 38
+text = "Start"
+horizontal_alignment = 1
+script = ExtResource("5_bfmof")
+
+[node name="Collection" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("1_ia2cg")
+theme_override_font_sizes/font_size = 35
+text = "Collection"
+script = ExtResource("5_bfmof")
+
+[node name="Settings" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("1_ia2cg")
+theme_override_font_sizes/font_size = 38
+text = "Settings"
+horizontal_alignment = 1
+script = ExtResource("5_bfmof")
+
+[node name="Exit" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("1_ia2cg")
+theme_override_font_sizes/font_size = 38
+text = "Exit"
+horizontal_alignment = 1
+script = ExtResource("5_bfmof")
+
+[connection signal="cursor_selected" from="VBoxContainer/Start" to="VBoxContainer/Start" method="cursor_select"]
+[connection signal="cursor_selected" from="VBoxContainer/Collection" to="VBoxContainer/Collection" method="cursor_select"]
+[connection signal="cursor_selected" from="VBoxContainer/Settings" to="VBoxContainer/Settings" method="cursor_select"]
+[connection signal="cursor_selected" from="VBoxContainer/Exit" to="VBoxContainer/Exit" method="cursor_select"]

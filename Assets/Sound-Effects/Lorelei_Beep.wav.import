@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://c885j6vy7txvo"
-path="res://.godot/imported/Lorelei_Beep.wav-2423d32d173df3764d38f55248f0d7e6.sample"
+path="res://.godot/imported/Lorelei_Beep.wav-ec34f48f7e891c6323b90e491e5ccd9c.sample"
 
 [deps]
 
-source_file="res://Assets/Lorelei_Beep.wav"
-dest_files=["res://.godot/imported/Lorelei_Beep.wav-2423d32d173df3764d38f55248f0d7e6.sample"]
+source_file="res://Assets/Sound-Effects/Lorelei_Beep.wav"
+dest_files=["res://.godot/imported/Lorelei_Beep.wav-ec34f48f7e891c6323b90e491e5ccd9c.sample"]
 
 [params]
 

@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://do2syej4mt8yu"]
 
-[ext_resource type="Script" path="res://Assets/Scenes/Script/Freeplay_Screen.gd" id="1_6rosu"]
+[ext_resource type="Script" path="res://Assets/Scenes/Main_Menu_Scene/Freeplay/Freeplay_Screen.gd" id="1_6rosu"]
 [ext_resource type="Texture2D" uid="uid://c4rcmxjlqdwbq" path="res://Assets/Video_Game_Art/Freeplay.png" id="2_7hg7g"]
 
 [node name="Control" type="Control"]

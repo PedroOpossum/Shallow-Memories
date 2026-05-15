@@ -25,7 +25,7 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _input(event):
 	if event.is_action_pressed("ui_cancel"):
-		get_tree().change_scene_to_file("res://Assets/Scenes/Main_Menu.tscn")
+		get_tree().change_scene_to_file("res://Assets/Scenes/Main_Menu_Scene/Main_Menu/Main_Menu.tscn")
 
 	elif event.is_action_pressed("ui_up"):
 		move_selection(-1)
