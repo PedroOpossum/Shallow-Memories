@@ -25,25 +25,28 @@ grow_vertical = 2
 scale = Vector2(2, 2)
 theme_override_constants/separation = 68
 
-[node name="First" type="TextureRect" parent="VBoxContainer"]
+[node name="Level 1" type="TextureButton" parent="VBoxContainer"]
 clip_contents = true
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
-texture = ExtResource("2_7hg7g")
+button_mask = 0
+texture_normal = ExtResource("2_7hg7g")
 stretch_mode = 1
 
-[node name="Second" type="TextureRect" parent="VBoxContainer"]
+[node name="Level 2" type="TextureButton" parent="VBoxContainer"]
 clip_contents = true
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
-texture = ExtResource("2_7hg7g")
+button_mask = 0
+texture_normal = ExtResource("2_7hg7g")
 
-[node name="Third" type="TextureRect" parent="VBoxContainer"]
+[node name="Level 3" type="TextureButton" parent="VBoxContainer"]
 clip_contents = true
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
-texture = ExtResource("2_7hg7g")
+button_mask = 0
+texture_normal = ExtResource("2_7hg7g")
 stretch_mode = 4

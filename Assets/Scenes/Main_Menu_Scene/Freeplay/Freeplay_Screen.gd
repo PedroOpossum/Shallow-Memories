@@ -1,67 +1,45 @@
 extends Control
 
-
-@onready var items: Array = $VBoxContainer.get_children()
-
-var current_index: int = 0
-var tween: Tween
-
-const CENTER_SCALE := Vector2.ONE
-const SIDE_SCALE := Vector2(0.7, 0.7)
-
-const CENTER_ALPHA := 1.0
-const SIDE_ALPHA := 0.4
-
-const TWEEN_DURATION := 0.25
+var buttons: Array[TextureButton] = []
+var selected_index := 0
 
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
-	await get_tree().process_frame
-	update_visuals(true)
+	buttons.clear()
+	for node in find_children("*", "TextureButton", true, false):
+		if node is TextureButton:
+			buttons.append(node)
+	for i in buttons.size():
+		buttons[i].focus_mode = Control.FOCUS_ALL
+		buttons[i].focus_entered.connect(_on_focus.bind(i))
+	if buttons.size() > 0:
+		buttons[0].grab_focus()
+		await get_tree().process_frame
+		_on_focus(0)
 
+func _on_focus(index: int):
+	selected_index = index
+	for i in buttons.size():
+		var tween = buttons[i].create_tween()
+		tween.tween_property(
+			buttons[i],
+			"modulate",
+			Color.WHITE if i == index else Color(0.35, 0.35, 0.35, 1),
+			0.15
+		)
+		tween.parallel().tween_property(
+			buttons[i],
+			"scale",
+			Vector2(1.1, 1.1) if i == index else Vector2(0.7, 0.7),
+			0.15
+		)
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _input(event):
+func _unhandled_input(event):
 	if event.is_action_pressed("ui_cancel"):
 		get_tree().change_scene_to_file("res://Assets/Scenes/Main_Menu_Scene/Main_Menu/Main_Menu.tscn")
+	if event.is_action_pressed("ui_accept"):
+		_launch_level(selected_index)
 
-	elif event.is_action_pressed("ui_up"):
-		move_selection(-1)
-
-	elif event.is_action_pressed("ui_down"):
-		move_selection(1)
-		
-func move_selection(direction: int) -> void:
-	current_index = wrapi(current_index + direction, 0, items.size())
-	update_visuals()
-
-
-func update_visuals(instant: bool = false) -> void:
-	   # Kill previous tween if exists
-	if tween:
-		tween.kill()
-	# Create a new tween
-	tween = create_tween()
-	tween.set_parallel(true)
-	var has_tweeners := false
-	for i in range(items.size()):
-		var item: TextureRect = items[i]
-		var is_selected := i == current_index
-		var target_scale := CENTER_SCALE if is_selected else SIDE_SCALE
-		var target_alpha := CENTER_ALPHA if is_selected else SIDE_ALPHA
-		if instant:
-			item.scale = target_scale
-			item.modulate.a = target_alpha
-		else:
-			# Only tween if current value is different
-			if item.scale != target_scale:
-				tween.tween_property(item, "scale", target_scale, TWEEN_DURATION)
-				has_tweeners = true
-			if item.modulate.a != target_alpha:
-				tween.tween_property(item, "modulate:a", target_alpha, TWEEN_DURATION)
-				has_tweeners = true
-	# If no tweeners were added, kill the tween to avoid the warning 
-	if not has_tweeners:    
-		tween.kill()
+func _launch_level(index: int):
+	var level_name = buttons[index].name
+	Levels.load_level(level_name)
