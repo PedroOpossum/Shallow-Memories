@@ -2,10 +2,29 @@ extends Node
 
 var poems := {
 	"Poem 1": {
-		"title": "Poem 1",
+		"title": "The Rhodonite Child",
 
 		"text": 
-			"Roses are red,"
+			"
+			I woke up into a desolate scary place
+			Pink crystals pierce my body in pain
+			They hurt, they always hurt, but I wake up again
+			Trapped inside the isolated cave with no escape
+			
+			All the paths end the same
+			Tunnels twist and lead astray
+			But something reaches out in the dark
+			A figure that's calling out my name
+			
+			The pink crystals pulsate and glows
+			Guiding me through limestone walls
+			Following where the sound goes
+			A profound piece of hope I hold
+			
+			Shielded by your blue cloak, I hug you close
+			Tears roll down, solace and ease overflow
+			You smile before you’re gone in a flash
+			So I wake up again to the dark at last"
 		
 	},
 	

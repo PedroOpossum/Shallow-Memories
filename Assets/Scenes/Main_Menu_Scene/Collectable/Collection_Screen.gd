@@ -15,6 +15,7 @@ func _ready():
 		buttons[i].focus_entered.connect(_on_focus.bind(i))
 	if buttons.size() > 0:
 		buttons[0].grab_focus()
+		await get_tree().process_frame
 		_on_focus(0)
 
 func _on_focus(index: int):

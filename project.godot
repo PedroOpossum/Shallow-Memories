@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
 Poems="*res://Assets/Scenes/Main_Menu_Scene/Collectable/Poems.gd"
+Levels="*res://Assets/Scenes/Main_Menu_Scene/Freeplay/Level_Selection.gd"
 
 [dialogue_manager]
 
