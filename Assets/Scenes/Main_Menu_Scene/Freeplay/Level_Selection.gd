@@ -1,14 +1,30 @@
 extends Node
 
 
-var scenes := {
-	"Level 1": "res://Assets/Scenes/Levels/Level1.tscn",
-	"Level 2": "res://Assets/Scenes/Levels/Level2.tscn",
-	"Level 3": "res://Assets/Scenes/Levels/Level3.tscn"
-}
+var songs = [
+{ "title":"Fly wit me",
+  "artist":"Camellia",
+  "song":preload("res://Assets/Music/TeraIO_mp3/05 Fly Wit Me.mp3"),
+  "scene": ""
+},
 
-func load_level(name: String) -> void:
-	if scenes.has(name):
-		get_tree().change_scene_to_file(scenes[name])
-	else:
-		push_warning("Level not found: " + name)
+{ "title":"Dance with Silence",
+  "artist":"Camellia",
+  "song":preload("res://Assets/Music/TeraIO_mp3/03 Dance with Silence.mp3"),
+  "scene": ""
+},
+{ "title":"Fly wit me",
+  "artist":"Kawai Sprite",
+  "song":preload("res://Assets/Music/TeraIO_mp3/05 Fly Wit Me.mp3"),
+  "scene": ""
+},
+
+{ "title":"Fly wit me",
+  "artist":"Kawai Sprite",
+  "song":preload("res://Assets/Music/TeraIO_mp3/05 Fly Wit Me.mp3"),
+  "scene": ""
+},
+]
+
+func load_level(index: int):
+	get_tree().change_scene_to_file(songs[index].scene)

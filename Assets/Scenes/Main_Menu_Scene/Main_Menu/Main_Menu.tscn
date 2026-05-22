@@ -110,9 +110,6 @@ text = "Exit"
 horizontal_alignment = 1
 script = ExtResource("5_bfmof")
 
-[node name="Control" type="Control" parent="."]
-anchors_preset = 0
-
 [connection signal="cursor_selected" from="VBoxContainer/Start" to="VBoxContainer/Start" method="cursor_select"]
 [connection signal="cursor_selected" from="VBoxContainer/Freeplay" to="VBoxContainer/Freeplay" method="cursor_select"]
 [connection signal="cursor_selected" from="VBoxContainer/Collection" to="VBoxContainer/Collection" method="cursor_select"]

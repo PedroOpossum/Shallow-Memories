@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://do2syej4mt8yu"]
+[gd_scene load_steps=4 format=3 uid="uid://do2syej4mt8yu"]
 
 [ext_resource type="Script" path="res://Assets/Scenes/Main_Menu_Scene/Freeplay/Freeplay_Screen.gd" id="1_6rosu"]
 [ext_resource type="Texture2D" uid="uid://c4rcmxjlqdwbq" path="res://Assets/Video_Game_Art/Freeplay.png" id="2_7hg7g"]
+[ext_resource type="FontFile" uid="uid://cpc61i1o4mhii" path="res://Assets/Fonts/Adventurer.ttf" id="3_uod3r"]
 
 [node name="Control" type="Control"]
 clip_contents = true
@@ -15,38 +16,65 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource("1_6rosu")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="Level 1" type="TextureButton" parent="."]
 clip_contents = true
-layout_mode = 1
-anchors_preset = 9
-anchor_bottom = 1.0
+layout_mode = 2
 offset_right = 264.0
-grow_vertical = 2
-scale = Vector2(2, 2)
-theme_override_constants/separation = 68
-
-[node name="Level 1" type="TextureButton" parent="VBoxContainer"]
-clip_contents = true
-layout_mode = 2
-size_flags_horizontal = 0
-size_flags_vertical = 0
-button_mask = 0
-texture_normal = ExtResource("2_7hg7g")
-stretch_mode = 1
-
-[node name="Level 2" type="TextureButton" parent="VBoxContainer"]
-clip_contents = true
-layout_mode = 2
-size_flags_horizontal = 0
-size_flags_vertical = 0
+offset_bottom = 110.0
+size_flags_vertical = 3
 button_mask = 0
 texture_normal = ExtResource("2_7hg7g")
 
-[node name="Level 3" type="TextureButton" parent="VBoxContainer"]
+[node name="Level 2" type="TextureButton" parent="."]
 clip_contents = true
 layout_mode = 2
-size_flags_horizontal = 0
-size_flags_vertical = 0
+offset_right = 264.0
+offset_bottom = 110.0
 button_mask = 0
 texture_normal = ExtResource("2_7hg7g")
-stretch_mode = 4
+
+[node name="Level 3" type="TextureButton" parent="."]
+clip_contents = true
+layout_mode = 2
+offset_right = 264.0
+offset_bottom = 62.0
+button_mask = 0
+texture_normal = ExtResource("2_7hg7g")
+
+[node name="Level 4" type="TextureButton" parent="."]
+clip_contents = true
+layout_mode = 2
+offset_right = 264.0
+offset_bottom = 62.0
+button_mask = 0
+texture_normal = ExtResource("2_7hg7g")
+
+[node name="InfoPanel" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Artist" type="Label" parent="InfoPanel"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 95.0
+offset_right = 76.0
+offset_bottom = 118.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_uod3r")
+theme_override_font_sizes/font_size = 15
+vertical_alignment = 1
+
+[node name="SongTitle" type="Label" parent="InfoPanel"]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 33.0
+offset_right = 152.0
+offset_bottom = 84.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_uod3r")
+theme_override_font_sizes/font_size = 35
+vertical_alignment = 1
+
+[node name="Song" type="AudioStreamPlayer" parent="InfoPanel"]
+autoplay = true
