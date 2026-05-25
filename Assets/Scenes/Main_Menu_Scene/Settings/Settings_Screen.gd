@@ -1,17 +1,44 @@
 extends Control
 
+@onready var tabs := [%Audio, %Resolution, %KeyBindings]
+@onready var pages := $Setting_Box/Pages.get_children()
 
-# Called when the node enters the scene tree for the first time.
+var current_tab := 0
+
+
 func _ready():
 
-	pass # Replace with function body.
+	for i in tabs.size():
+		tabs[i].pressed.connect(switch_tab.bind(i))
+		tabs[i].focus_mode = Control.FOCUS_ALL
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta):
-	pass
+	switch_tab(0)
 
 
 func _unhandled_input(event):
-	if event.is_action_pressed("ui_cancel"):
+
+	if event.is_action_pressed("ui_right"):
+		switch_tab(current_tab + 1)
+
+	elif event.is_action_pressed("ui_left"):
+		switch_tab(current_tab - 1)
+
+	elif event.is_action_pressed("ui_cancel"):
 		get_tree().change_scene_to_file("res://Assets/Scenes/Main_Menu_Scene/Main_Menu/Main_Menu.tscn")
+
+
+func switch_tab(index):
+
+	current_tab = wrapi(index, 0, tabs.size())
+
+	for i in tabs.size():
+
+		var active := i == current_tab
+
+		pages[i].visible = active
+
+		tabs[i].modulate = (
+			Color.WHITE
+			if active
+			else Color(0.5, 0.5, 0.5)
+		)
