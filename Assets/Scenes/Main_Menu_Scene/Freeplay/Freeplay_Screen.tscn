@@ -78,3 +78,4 @@ vertical_alignment = 1
 
 [node name="Song" type="AudioStreamPlayer" parent="InfoPanel"]
 autoplay = true
+bus = &"Music"

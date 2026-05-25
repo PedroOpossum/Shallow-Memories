@@ -116,5 +116,4 @@ func _play_song(i: int):
 	audio_tween.tween_callback(func():
 		music.stream = Levels.songs[i].song
 		music.play()
-		music.volume_db = -20
 	)
