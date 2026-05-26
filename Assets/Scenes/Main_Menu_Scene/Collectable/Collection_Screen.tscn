@@ -112,7 +112,7 @@ layout_mode = 2
 button_mask = 0
 texture_normal = ExtResource("2_fdua7")
 
-[node name="Poem 16" type="TextureButton" parent="Main_UI/Notes"]
+[node name="Poem 17" type="TextureButton" parent="Main_UI/Notes"]
 layout_mode = 2
 button_mask = 0
 texture_normal = ExtResource("2_fdua7")

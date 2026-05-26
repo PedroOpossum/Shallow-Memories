@@ -8,7 +8,7 @@ func _ready() -> void:
 func _on_outro_finished() -> void:
 	await get_tree().create_timer(0.1).timeout
 	get_tree().paused = false
-	get_tree().change_scene_to_file("res://Assets/Scenes/Main_Menu.tscn")
+	get_tree().change_scene_to_file("res://Assets/Scenes/Main_Menu_Scene/Main_Menu/Main_Menu.tscn")
 
 func _unhandled_input(event: InputEvent) -> void:
 	if not _can_interact:

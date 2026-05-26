@@ -13,7 +13,7 @@ config_version=5
 config/name="Shallow_Memories DEMO"
 run/main_scene="res://Assets/Scenes/Main_Menu_Scene/Main_Menu/Transitioning_Scene.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="res://Assets/Video_Game_Art/Icon.png"
 
 [autoload]
 

@@ -24,7 +24,7 @@ func set_cursor_from_index(index: int) -> void:
 		return
 	
 	var menu_position = menu_item.position
-	var menu_size = menu_item.size
+	var _menu_size = menu_item.size
 	position = menu_position + cursor_offset
 	cursor_index = index
 	

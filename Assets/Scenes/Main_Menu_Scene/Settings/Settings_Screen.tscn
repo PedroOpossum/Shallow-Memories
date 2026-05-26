@@ -1,9 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://ck4jxh8ia3xvv"]
+[gd_scene load_steps=7 format=3 uid="uid://ck4jxh8ia3xvv"]
 
 [ext_resource type="Script" path="res://Assets/Scenes/Main_Menu_Scene/Settings/Settings_Screen.gd" id="1_cghld"]
 [ext_resource type="Texture2D" uid="uid://c317pmm3tynep" path="res://Assets/Video_Game_Art/Setting Box.png" id="2_mo3cp"]
 [ext_resource type="Script" path="res://Assets/Scenes/Main_Menu_Scene/Settings/AudioPage.gd" id="3_unghw"]
-[ext_resource type="Script" path="res://Assets/Scenes/Main_Menu_Scene/Settings/KeyBindingsPage.gd" id="4_2ur0o"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1oafj"]
 bg_color = Color(0, 0, 0, 1)
@@ -79,33 +78,65 @@ script = ExtResource("3_unghw")
 [node name="VBoxContainer" type="VBoxContainer" parent="Setting_Box/Pages/AudioPage"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.447
-anchor_top = 0.171
+anchor_left = 0.057
+anchor_top = 0.149
 anchor_right = 0.927
-anchor_bottom = 0.902
-offset_left = 0.151978
-offset_top = -0.0880013
+anchor_bottom = 0.927
+offset_left = -0.0880051
+offset_top = -0.872002
 offset_right = -0.16803
-offset_bottom = 0.143982
+offset_bottom = 0.94397
 grow_horizontal = 0
 grow_vertical = 2
-theme_override_constants/separation = 93
+theme_override_constants/separation = 0
 
-[node name="Master" type="HSlider" parent="Setting_Box/Pages/AudioPage/VBoxContainer"]
+[node name="HBoxContainerMaster" type="HBoxContainer" parent="Setting_Box/Pages/AudioPage/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 340
+
+[node name="Label" type="Label" parent="Setting_Box/Pages/AudioPage/VBoxContainer/HBoxContainerMaster"]
+layout_mode = 2
+text = "Master
+"
+
+[node name="Master" type="HSlider" parent="Setting_Box/Pages/AudioPage/VBoxContainer/HBoxContainerMaster"]
 unique_name_in_owner = true
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
 max_value = 1.0
 step = 0.01
 
-[node name="Music" type="HSlider" parent="Setting_Box/Pages/AudioPage/VBoxContainer"]
+[node name="HBoxContainerMusic" type="HBoxContainer" parent="Setting_Box/Pages/AudioPage/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 350
+
+[node name="Label" type="Label" parent="Setting_Box/Pages/AudioPage/VBoxContainer/HBoxContainerMusic"]
+layout_mode = 2
+text = "Music"
+
+[node name="Music" type="HSlider" parent="Setting_Box/Pages/AudioPage/VBoxContainer/HBoxContainerMusic"]
 unique_name_in_owner = true
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
 max_value = 1.0
 step = 0.01
 
-[node name="SFX" type="HSlider" parent="Setting_Box/Pages/AudioPage/VBoxContainer"]
+[node name="HBoxContainerSFX" type="HBoxContainer" parent="Setting_Box/Pages/AudioPage/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 369
+
+[node name="Label" type="Label" parent="Setting_Box/Pages/AudioPage/VBoxContainer/HBoxContainerSFX"]
+layout_mode = 2
+text = "SFX"
+
+[node name="SFX" type="HSlider" parent="Setting_Box/Pages/AudioPage/VBoxContainer/HBoxContainerSFX"]
 unique_name_in_owner = true
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
 max_value = 1.0
 step = 0.01
 
@@ -118,6 +149,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="KeyBindingsPage" type="Control" parent="Setting_Box/Pages"]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -128,7 +160,59 @@ offset_right = -8.0
 offset_bottom = -8.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("4_2ur0o")
+script = ExtResource("3_unghw")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Setting_Box/Pages/KeyBindingsPage"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.057
+anchor_top = 0.149
+anchor_right = 0.927
+anchor_bottom = 0.927
+offset_left = -0.0880051
+offset_top = 0.127998
+offset_right = -0.16803
+offset_bottom = -0.0560303
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer1" type="HBoxContainer" parent="Setting_Box/Pages/KeyBindingsPage/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 350
+
+[node name="Label" type="Label" parent="Setting_Box/Pages/KeyBindingsPage/VBoxContainer/HBoxContainer1"]
+layout_mode = 2
+text = "Left
+
+"
+
+[node name="Left" type="Button" parent="Setting_Box/Pages/KeyBindingsPage/VBoxContainer/HBoxContainer1"]
+layout_mode = 2
+text = "
+"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Setting_Box/Pages/KeyBindingsPage/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 350
+
+[node name="Label" type="Label" parent="Setting_Box/Pages/KeyBindingsPage/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+text = "Right"
+
+[node name="Right" type="Button" parent="Setting_Box/Pages/KeyBindingsPage/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="Setting_Box/Pages/KeyBindingsPage/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 350
+
+[node name="Label" type="Label" parent="Setting_Box/Pages/KeyBindingsPage/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+text = "Up
+"
+
+[node name="Up" type="Button" parent="Setting_Box/Pages/KeyBindingsPage/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
 
 [node name="Audio" type="Button" parent="Setting_Box"]
 unique_name_in_owner = true

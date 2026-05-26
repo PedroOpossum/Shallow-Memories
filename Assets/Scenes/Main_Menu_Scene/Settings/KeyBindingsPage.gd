@@ -9,8 +9,7 @@ const SETTINGS_FILE := "user://settings.cfg"
 	"ui_down": %Down
 }
 
-var listening_action := ""
-var loading := true
+var listening := ""
 
 
 func _ready():
@@ -18,32 +17,47 @@ func _ready():
 	load_binds()
 
 	for action in binds:
-		binds[action].pressed.connect(start_rebind.bind(action))
 
-	loading = false
+		binds[action].pressed.connect(
+			start_rebind.bind(action)
+		)
+
+		update_text(action)
 
 
 func start_rebind(action: String):
 
-	listening_action = action
+	listening = action
 	binds[action].text = "PRESS KEY..."
 
 
 func _input(event):
 
-	if listening_action == "":
+	if listening == "":
 		return
 
 	if event is InputEventKey and event.pressed:
 
-		InputMap.action_erase_events(listening_action)
-		InputMap.action_add_event(listening_action, event)
-
-		binds[listening_action].text = event.as_text()
-
+		set_bind(listening, event)
 		save_binds()
 
-		listening_action = ""
+		listening = ""
+
+
+func set_bind(action: String, event: InputEventKey):
+
+	InputMap.action_erase_events(action)
+	InputMap.action_add_event(action, event)
+
+	update_text(action)
+
+
+func update_text(action: String):
+
+	var events: Array[InputEvent] = InputMap.action_get_events(action)
+
+	if events.size() > 0:
+		binds[action].text = events[0].as_text()
 
 
 func save_binds():
@@ -52,7 +66,7 @@ func save_binds():
 
 	for action in binds:
 
-		var events := InputMap.action_get_events(action)
+		var events: Array[InputEvent] = InputMap.action_get_events(action)
 
 		if events.size() > 0:
 			cfg.set_value("binds", action, events[0].keycode)
@@ -77,7 +91,4 @@ func load_binds():
 		var event := InputEventKey.new()
 		event.keycode = keycode
 
-		InputMap.action_erase_events(action)
-		InputMap.action_add_event(action, event)
-
-		binds[action].text = event.as_text()
+		set_bind(action, event)

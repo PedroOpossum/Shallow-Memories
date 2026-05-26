@@ -539,7 +539,6 @@ animation = &"Calm"
 [node name="Pedro_Beep" type="AudioStreamPlayer" parent="Pedro"]
 stream = ExtResource("12_55n3p")
 volume_db = -15.0
-bus = &"SFX"
 
 [node name="Lorelei_Stays_to_The_right" type="Control" parent="."]
 layout_mode = 3
@@ -562,7 +561,6 @@ offset = Vector2(-96.6027, 87.4645)
 [node name="Lorelei_Beep" type="AudioStreamPlayer" parent="Lorelei_Stays_to_The_right/Lorelei"]
 stream = SubResource("AudioStreamWAV_6tl6p")
 volume_db = -20.0
-bus = &"SFX"
 
 [connection signal="gui_input" from="Balloon" to="." method="_on_balloon_gui_input"]
 [connection signal="response_selected" from="Responses/ResponsesMenu" to="." method="_on_responses_menu_response_selected"]
