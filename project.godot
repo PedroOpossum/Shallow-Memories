@@ -15,6 +15,10 @@ run/main_scene="res://Assets/Scenes/Main_Menu_Scene/Main_Menu/Transitioning_Scen
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://Assets/Video_Game_Art/Icon.png"
 
+[audio]
+
+buses/default_bus_layout="res://Assets/Scenes/Main_Menu_Scene/Settings/Audio_Manipulation.tres"
+
 [autoload]
 
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"

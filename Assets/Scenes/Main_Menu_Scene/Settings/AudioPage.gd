@@ -12,7 +12,6 @@ var loading := true
 
 
 func _ready():
-
 	load_settings()
 
 	for bus in sliders:
@@ -55,6 +54,5 @@ func load_settings():
 
 
 func set_defaults():
-
 	for bus in sliders:
-		sliders[bus].value = 1.0
+		sliders[bus].value = 1.0 

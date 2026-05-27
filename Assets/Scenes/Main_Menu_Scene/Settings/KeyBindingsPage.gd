@@ -3,10 +3,10 @@ extends Control
 const SETTINGS_FILE := "user://settings.cfg"
 
 @onready var binds := {
-	"ui_left": %Left,
-	"ui_right": %Right,
-	"ui_up": %Up,
-	"ui_down": %Down
+	"ui_up": %UpButton,
+	"ui_left": %LeftButton,
+	"ui_down": %DownButton,
+	"ui_right": %RightButton,
 }
 
 var listening := ""
@@ -19,45 +19,78 @@ func _ready():
 	for action in binds:
 
 		binds[action].pressed.connect(
-			start_rebind.bind(action)
+			func():
+				listening = action
+				binds[action].text = "PRESS KEY..."
 		)
 
 		update_text(action)
 
 
-func start_rebind(action: String):
-
-	listening = action
-	binds[action].text = "PRESS KEY..."
-
-
 func _input(event):
 
-	if listening == "":
+	if listening.is_empty():
 		return
 
-	if event is InputEventKey and event.pressed:
+	if !(event is InputEventKey):
+		return
 
-		set_bind(listening, event)
-		save_binds()
+	if not event.pressed or event.echo:
+		return
 
-		listening = ""
+	# Ignore button activation keys
+	if event.keycode in [KEY_ENTER, KEY_KP_ENTER, KEY_SPACE]:
+		return
+
+	# Remove this key from every action
+	for action in binds:
+
+		for e in InputMap.action_get_events(action):
+
+			if e is InputEventKey and e.keycode == event.keycode:
+				InputMap.action_erase_event(action, e)
+
+				update_text(action)
+
+	# Set new bind
+	InputMap.action_erase_events(listening)
+	InputMap.action_add_event(listening, event)
+
+	update_text(listening)
+	save_binds()
+
+	listening = ""
 
 
-func set_bind(action: String, event: InputEventKey):
+func get_key_text(event: InputEventKey) -> String:
 
-	InputMap.action_erase_events(action)
-	InputMap.action_add_event(action, event)
+	match event.keycode:
 
-	update_text(action)
+		KEY_UP:
+			return "↑"
+
+		KEY_DOWN:
+			return "↓"
+
+		KEY_LEFT:
+			return "←"
+
+		KEY_RIGHT:
+			return "→"
+
+		_:
+			return event.as_text()
 
 
 func update_text(action: String):
 
-	var events: Array[InputEvent] = InputMap.action_get_events(action)
+	var events := InputMap.action_get_events(action)
 
-	if events.size() > 0:
-		binds[action].text = events[0].as_text()
+	binds[action].text = (
+		get_key_text(events[0])
+		if not events.is_empty()
+		else "-"
+	)
 
 
 func save_binds():
@@ -66,10 +99,15 @@ func save_binds():
 
 	for action in binds:
 
-		var events: Array[InputEvent] = InputMap.action_get_events(action)
+		var events := InputMap.action_get_events(action)
 
-		if events.size() > 0:
-			cfg.set_value("binds", action, events[0].keycode)
+		if not events.is_empty():
+
+			cfg.set_value(
+				"binds",
+				action,
+				events[0].keycode
+			)
 
 	cfg.save(SETTINGS_FILE)
 
@@ -83,12 +121,15 @@ func load_binds():
 
 	for action in binds:
 
-		var keycode: int = cfg.get_value("binds", action, 0)
+		var key: int = cfg.get_value("binds", action, 0)
 
-		if keycode == 0:
+		if key == 0:
 			continue
 
 		var event := InputEventKey.new()
-		event.keycode = keycode
+		event.keycode = key
 
-		set_bind(action, event)
+		InputMap.action_erase_events(action)
+		InputMap.action_add_event(action, event)
+
+		update_text(action)

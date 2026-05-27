@@ -1,8 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://ck4jxh8ia3xvv"]
+[gd_scene load_steps=10 format=3 uid="uid://ck4jxh8ia3xvv"]
 
 [ext_resource type="Script" path="res://Assets/Scenes/Main_Menu_Scene/Settings/Settings_Screen.gd" id="1_cghld"]
 [ext_resource type="Texture2D" uid="uid://c317pmm3tynep" path="res://Assets/Video_Game_Art/Setting Box.png" id="2_mo3cp"]
 [ext_resource type="Script" path="res://Assets/Scenes/Main_Menu_Scene/Settings/AudioPage.gd" id="3_unghw"]
+[ext_resource type="FontFile" uid="uid://cpc61i1o4mhii" path="res://Assets/Fonts/Adventurer.ttf" id="4_tpt2j"]
+[ext_resource type="FontFile" uid="uid://c8cm2ggb5pdys" path="res://Assets/Fonts/joystix monospace.otf" id="5_2d4qh"]
+[ext_resource type="Script" path="res://Assets/Scenes/Main_Menu_Scene/Settings/KeyBindingsPage.gd" id="5_m0upd"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1oafj"]
 bg_color = Color(0, 0, 0, 1)
@@ -67,6 +70,7 @@ offset_right = -0.599976
 offset_bottom = -6.10352e-05
 
 [node name="AudioPage" type="Control" parent="Setting_Box/Pages"]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -96,6 +100,8 @@ theme_override_constants/separation = 340
 
 [node name="Label" type="Label" parent="Setting_Box/Pages/AudioPage/VBoxContainer/HBoxContainerMaster"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("4_tpt2j")
+theme_override_font_sizes/font_size = 25
 text = "Master
 "
 
@@ -114,6 +120,8 @@ theme_override_constants/separation = 350
 
 [node name="Label" type="Label" parent="Setting_Box/Pages/AudioPage/VBoxContainer/HBoxContainerMusic"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("4_tpt2j")
+theme_override_font_sizes/font_size = 25
 text = "Music"
 
 [node name="Music" type="HSlider" parent="Setting_Box/Pages/AudioPage/VBoxContainer/HBoxContainerMusic"]
@@ -130,6 +138,8 @@ theme_override_constants/separation = 369
 
 [node name="Label" type="Label" parent="Setting_Box/Pages/AudioPage/VBoxContainer/HBoxContainerSFX"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("4_tpt2j")
+theme_override_font_sizes/font_size = 25
 text = "SFX"
 
 [node name="SFX" type="HSlider" parent="Setting_Box/Pages/AudioPage/VBoxContainer/HBoxContainerSFX"]
@@ -149,7 +159,6 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="KeyBindingsPage" type="Control" parent="Setting_Box/Pages"]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -160,59 +169,73 @@ offset_right = -8.0
 offset_bottom = -8.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("3_unghw")
+script = ExtResource("5_m0upd")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Setting_Box/Pages/KeyBindingsPage"]
+[node name="GridContainer" type="GridContainer" parent="Setting_Box/Pages/KeyBindingsPage"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.057
-anchor_top = 0.149
-anchor_right = 0.927
+anchor_left = 0.033
+anchor_top = 0.122
+anchor_right = 0.366
 anchor_bottom = 0.927
-offset_left = -0.0880051
-offset_top = 0.127998
-offset_right = -0.16803
-offset_bottom = -0.0560303
-grow_horizontal = 2
+offset_left = -0.471985
+offset_top = -0.0159683
+offset_right = 3.85599
+offset_bottom = -5.05597
 grow_vertical = 2
+theme_override_constants/h_separation = 200
+theme_override_constants/v_separation = 45
+columns = 2
 
-[node name="HBoxContainer1" type="HBoxContainer" parent="Setting_Box/Pages/KeyBindingsPage/VBoxContainer"]
+[node name="Up" type="Label" parent="Setting_Box/Pages/KeyBindingsPage/GridContainer"]
 layout_mode = 2
-theme_override_constants/separation = 350
+theme_override_fonts/font = ExtResource("4_tpt2j")
+theme_override_font_sizes/font_size = 30
+text = "Up"
 
-[node name="Label" type="Label" parent="Setting_Box/Pages/KeyBindingsPage/VBoxContainer/HBoxContainer1"]
+[node name="UpButton" type="Button" parent="Setting_Box/Pages/KeyBindingsPage/GridContainer"]
+unique_name_in_owner = true
 layout_mode = 2
-text = "Left
+theme_override_font_sizes/font_size = 20
+text = "W"
 
+[node name="Left" type="Label" parent="Setting_Box/Pages/KeyBindingsPage/GridContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_tpt2j")
+theme_override_font_sizes/font_size = 30
+text = "Left"
+
+[node name="LeftButton" type="Button" parent="Setting_Box/Pages/KeyBindingsPage/GridContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "A"
+
+[node name="Down" type="Label" parent="Setting_Box/Pages/KeyBindingsPage/GridContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_tpt2j")
+theme_override_font_sizes/font_size = 30
+text = "Down
 "
 
-[node name="Left" type="Button" parent="Setting_Box/Pages/KeyBindingsPage/VBoxContainer/HBoxContainer1"]
+[node name="DownButton" type="Button" parent="Setting_Box/Pages/KeyBindingsPage/GridContainer"]
+unique_name_in_owner = true
 layout_mode = 2
-text = "
+theme_override_font_sizes/font_size = 20
+text = "S"
+
+[node name="Right" type="Label" parent="Setting_Box/Pages/KeyBindingsPage/GridContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_tpt2j")
+theme_override_font_sizes/font_size = 30
+text = "Right
 "
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="Setting_Box/Pages/KeyBindingsPage/VBoxContainer"]
+[node name="RightButton" type="Button" parent="Setting_Box/Pages/KeyBindingsPage/GridContainer"]
+unique_name_in_owner = true
 layout_mode = 2
-theme_override_constants/separation = 350
-
-[node name="Label" type="Label" parent="Setting_Box/Pages/KeyBindingsPage/VBoxContainer/HBoxContainer2"]
-layout_mode = 2
-text = "Right"
-
-[node name="Right" type="Button" parent="Setting_Box/Pages/KeyBindingsPage/VBoxContainer/HBoxContainer2"]
-layout_mode = 2
-
-[node name="HBoxContainer3" type="HBoxContainer" parent="Setting_Box/Pages/KeyBindingsPage/VBoxContainer"]
-layout_mode = 2
-theme_override_constants/separation = 350
-
-[node name="Label" type="Label" parent="Setting_Box/Pages/KeyBindingsPage/VBoxContainer/HBoxContainer3"]
-layout_mode = 2
-text = "Up
-"
-
-[node name="Up" type="Button" parent="Setting_Box/Pages/KeyBindingsPage/VBoxContainer/HBoxContainer3"]
-layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "D"
 
 [node name="Audio" type="Button" parent="Setting_Box"]
 unique_name_in_owner = true
@@ -220,14 +243,15 @@ layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.2
 anchor_top = 0.315
-anchor_right = 0.254
+anchor_right = 0.276
 anchor_bottom = 0.395
-offset_left = -2.0
+offset_left = -1.0
 offset_top = -0.480042
-offset_right = -2.60001
+offset_right = -0.400024
 offset_bottom = 0.160004
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_fonts/font = ExtResource("5_2d4qh")
 theme_override_font_sizes/font_size = 25
 theme_override_styles/normal = SubResource("StyleBoxFlat_1oafj")
 theme_override_styles/hover = SubResource("StyleBoxFlat_1oafj")
@@ -239,14 +263,15 @@ icon_alignment = 1
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.469
+anchor_left = 0.429
 anchor_top = 0.315
-anchor_right = 0.562
+anchor_right = 0.581
 anchor_bottom = 0.395
-offset_left = -1.60004
+offset_left = -0.600037
 offset_top = -0.480042
-offset_right = 0.199951
+offset_right = 0.599976
 offset_bottom = 0.160004
+theme_override_fonts/font = ExtResource("5_2d4qh")
 theme_override_font_sizes/font_size = 25
 theme_override_styles/normal = SubResource("StyleBoxFlat_jhfdn")
 theme_override_styles/hover = SubResource("StyleBoxFlat_jhfdn")
@@ -259,14 +284,15 @@ icon_alignment = 1
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.757
+anchor_left = 0.698
 anchor_top = 0.315
 anchor_right = 0.865
 anchor_bottom = 0.395
-offset_left = 0.199951
-offset_top = -0.480042
+offset_left = 0.799988
+offset_top = -0.480011
 offset_right = -0.00012207
 offset_bottom = 0.160004
+theme_override_fonts/font = ExtResource("5_2d4qh")
 theme_override_font_sizes/font_size = 25
 theme_override_styles/normal = SubResource("StyleBoxFlat_mbmit")
 theme_override_styles/hover = SubResource("StyleBoxFlat_mbmit")
