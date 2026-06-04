@@ -1,10 +1,10 @@
 [gd_scene load_steps=4 format=3 uid="uid://cmvr0bmc0gkve"]
 
-[ext_resource type="Shader" path="res://Assets/Scenes/Main_Menu_Scene/Collectable/PoemView.gdshader" id="1_u1rlx"]
-[ext_resource type="Script" path="res://Assets/Scenes/Main_Menu_Scene/Collectable/PoemView.gd" id="1_ysfg3"]
+[ext_resource type="Script" path="res://Assets/Scenes/Main_Menu_Scene/Collectable/Poems/Poem-Viewer.gd" id="1_ysfg3"]
+[ext_resource type="Shader" path="res://Assets/Scenes/Main_Menu_Scene/Collectable/Poems/PoemView.gdshader" id="2_ei6tk"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_xgjpf"]
-shader = ExtResource("1_u1rlx")
+shader = ExtResource("2_ei6tk")
 shader_parameter/top_color = Color(0.94, 0.89, 0.84, 1)
 shader_parameter/bottom_color = Color(0.78, 0.67, 0.56, 1)
 shader_parameter/edge_darkness = 0.45

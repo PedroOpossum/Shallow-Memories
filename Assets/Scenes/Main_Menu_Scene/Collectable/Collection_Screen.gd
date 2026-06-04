@@ -4,6 +4,7 @@ var buttons: Array[TextureButton] = []
 var selected_index := 0
 
 @onready var poem_viewer = $PoemView
+@onready var memory_viewer = $MemoryView
 
 func _ready():
 	buttons.clear()
@@ -31,9 +32,15 @@ func _on_focus(index: int):
 
 func _open_collectible(button: TextureButton):
 	var key = button.name
-	if Poems.poems.has(key):  
-		$Main_UI.hide()
+	$Main_UI.hide()
+
+	if Poems.poems.has(key):
 		poem_viewer.open_poem(Poems.poems[key])
+		return
+
+	if MemoryOrbs.Memories.has(key):
+		memory_viewer.open_memory(MemoryOrbs.Memories[key])
+		return
 
 
 func _unhandled_input(event):
@@ -41,10 +48,18 @@ func _unhandled_input(event):
 		if buttons.size() == 0:
 			return
 		_open_collectible(buttons[selected_index])
+		
+		
 	if event.is_action_pressed("ui_cancel"):
 		if poem_viewer.visible:
 			poem_viewer.hide()
 			$Main_UI.show()
 			buttons[selected_index].grab_focus()
-		else:
-			get_tree().change_scene_to_file("res://Assets/Scenes/Main_Menu_Scene/Main_Menu/Main_Menu.tscn")
+			return
+			
+		if memory_viewer.visible:
+			memory_viewer.hide()
+			$Main_UI.show()
+			buttons[selected_index].grab_focus()
+			return
+		get_tree().change_scene_to_file("res://Assets/Scenes/Main_Menu_Scene/Main_Menu/Main_Menu.tscn")

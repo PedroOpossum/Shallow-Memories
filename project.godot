@@ -22,9 +22,9 @@ buses/default_bus_layout="res://Assets/Scenes/Main_Menu_Scene/Settings/Audio_Man
 [autoload]
 
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
-Poems="*res://Assets/Scenes/Main_Menu_Scene/Collectable/Poems.gd"
+Poems="*res://Assets/Scenes/Main_Menu_Scene/Collectable/Poems/Poems.gd"
 Levels="*res://Assets/Scenes/Main_Menu_Scene/Freeplay/Level_Selection.gd"
-MemoryOrbs="*res://Assets/Scenes/Main_Menu_Scene/Collectable/Memory-Orb.gd"
+MemoryOrbs="*res://Assets/Scenes/Main_Menu_Scene/Collectable/MemoryOrb/Memory-Orb.gd"
 
 [dialogue_manager]
 
