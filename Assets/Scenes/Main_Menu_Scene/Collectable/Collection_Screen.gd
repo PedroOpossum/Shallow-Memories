@@ -42,4 +42,9 @@ func _unhandled_input(event):
 			return
 		_open_collectible(buttons[selected_index])
 	if event.is_action_pressed("ui_cancel"):
-		get_tree().change_scene_to_file("res://Assets/Scenes/Main_Menu_Scene/Main_Menu/Main_Menu.tscn")
+		if poem_viewer.visible:
+			poem_viewer.hide()
+			$Main_UI.show()
+			buttons[selected_index].grab_focus()
+		else:
+			get_tree().change_scene_to_file("res://Assets/Scenes/Main_Menu_Scene/Main_Menu/Main_Menu.tscn")
