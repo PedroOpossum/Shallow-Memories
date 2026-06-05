@@ -18,6 +18,7 @@ func _ready():
 		buttons[0].grab_focus()
 		await get_tree().process_frame
 		_on_focus(0)
+	memory_viewer.memory_closed.connect(_on_memory_closed)
 
 func _on_focus(index: int):
 	selected_index = index
@@ -51,15 +52,16 @@ func _unhandled_input(event):
 		
 		
 	if event.is_action_pressed("ui_cancel"):
-		if poem_viewer.visible:
+		if poem_viewer.visible or memory_viewer.visible: 
 			poem_viewer.hide()
-			$Main_UI.show()
-			buttons[selected_index].grab_focus()
-			return
-			
-		if memory_viewer.visible:
 			memory_viewer.hide()
 			$Main_UI.show()
 			buttons[selected_index].grab_focus()
 			return
+			
 		get_tree().change_scene_to_file("res://Assets/Scenes/Main_Menu_Scene/Main_Menu/Main_Menu.tscn")
+		
+		
+func _on_memory_closed():
+	$Main_UI.show()
+	buttons[selected_index].grab_focus()
