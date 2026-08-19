@@ -39,7 +39,6 @@ func _process(_delta):
 		input.y -=1
 	if Input.is_action_just_pressed("ui_down") or Input.is_action_just_pressed("S"):
 		input.y +=1
-	set_cursor_from_index(cursor_index + input.y)
 	if Input.is_action_just_pressed("ui_accept"):
 		var current_menu := get_menu_item_at_index(cursor_index)
 		if current_menu != null:
